@@ -6,7 +6,7 @@
 /*   By: mameneze <mwmms@hotmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 20:43:45 by mameneze          #+#    #+#             */
-/*   Updated: 2021/07/16 16:29:28 by mameneze         ###   ########.fr       */
+/*   Updated: 2021/07/16 16:33:24 by mameneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,5 +120,6 @@ int	treat_pointer(size_t address, int width)
 	print_spaces(width - keptlen);
 	write(1, str, keptlen);
 	free(str);
+	free(hexa);
 	return (keptlen);
 }

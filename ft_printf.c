@@ -6,7 +6,7 @@
 /*   By: mameneze <mwmms@hotmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:00:52 by mameneze          #+#    #+#             */
-/*   Updated: 2021/07/14 22:39:54 by mameneze         ###   ########.fr       */
+/*   Updated: 2021/07/16 16:32:31 by mameneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_printf(const char *format, ...)
 	int		ptd;
 
 	i = -1;
-	ptd = -1;
+	ptd = 0;
 	va_start(ap, format);
 	while (format[++i])
 	{
