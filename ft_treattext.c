@@ -6,7 +6,7 @@
 /*   By: mameneze <mwmms@hotmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 20:23:26 by mameneze          #+#    #+#             */
-/*   Updated: 2021/07/14 23:36:47 by mameneze         ###   ########.fr       */
+/*   Updated: 2021/07/16 16:15:21 by mameneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@ int	ft_put_char(char c)
 {
 	write(1, &c, 1);
 	return (1);
+}
+
+int treat_char(char c, int width)
+{
+	print_spaces(width);
+	write(1, &c, 1);
+	return (2);	
 }
 
 int	treat_string(char *str, int width)
