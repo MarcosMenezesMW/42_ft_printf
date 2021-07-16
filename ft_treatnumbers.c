@@ -6,7 +6,7 @@
 /*   By: mameneze <mwmms@hotmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 20:43:45 by mameneze          #+#    #+#             */
-/*   Updated: 2021/07/16 17:40:20 by mameneze         ###   ########.fr       */
+/*   Updated: 2021/07/16 17:46:56 by mameneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ int	treat_pointer(size_t address, int width)
 	size_t	num;
 	
 	if (address == 0)
-		return (0);
+		return (write(1, "0", 1), 1);
 	len = 2;
 	num = address;
 	hexa = "0123456789abcdef";
