@@ -6,7 +6,7 @@
 /*   By: mameneze <mwmms@hotmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 20:43:45 by mameneze          #+#    #+#             */
-/*   Updated: 2021/07/16 16:39:21 by mameneze         ###   ########.fr       */
+/*   Updated: 2021/07/16 17:30:25 by mameneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ int	treat_uint(unsigned int number, int width)
 	keptlen = len;
 	str = malloc(len + 1);
 	str[len] = '\0';
+	if (number == 0)
+		str[--len] = '0';
 	while (len-- != 0)
 	{
 		str[len] = n_value % 10 + '0';
@@ -84,6 +86,8 @@ int	treat_hexa(char conversion, unsigned int number, int width)
 	keptlen = len;
 	str = malloc(len + 1);
 	str[len] = '\0';
+	if (number == 0)
+		str[--len] = '0';
 	while (len-- > 0)
 	{
 		str[len] = hexa[number % 16];
@@ -102,7 +106,9 @@ int	treat_pointer(size_t address, int width)
 	int		len;
 	int		keptlen;
 	size_t	num;
-
+	
+	if (address == 0)
+		return (write(1, "(nil)", 5), 4);
 	len = 2;
 	num = address;
 	hexa = "0123456789abcdef";
