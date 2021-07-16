@@ -6,7 +6,7 @@
 /*   By: mameneze <mwmms@hotmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 20:23:26 by mameneze          #+#    #+#             */
-/*   Updated: 2021/07/16 18:22:01 by mameneze         ###   ########.fr       */
+/*   Updated: 2021/07/16 18:24:10 by mameneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	treat_string(char *str, int width)
 {
 	int	len;
 
+	if (!str)
+		return(0);
 	len = ft_strlen(str);
 	print_spaces(width - len);
 	write(1, str, len);
