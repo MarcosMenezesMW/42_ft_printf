@@ -6,7 +6,7 @@
 /*   By: mameneze <mwmms@hotmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 20:43:45 by mameneze          #+#    #+#             */
-/*   Updated: 2021/07/16 18:01:05 by mameneze         ###   ########.fr       */
+/*   Updated: 2021/07/16 18:15:25 by mameneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	treat_uint(unsigned int number, int width)
 	long	n_value;
 
 	if (number == 0)
-		return (write(1, "0", 1), 1);
+		return (print_spaces(width - 3), write(1, "0", 1), 3);
 	len = 0;
 	n_value = number;
 	while (number != 0)
@@ -66,9 +66,7 @@ int	treat_uint(unsigned int number, int width)
 		n_value /= 10;
 	}
 	print_spaces(width - keptlen);
-	write(1, str, keptlen);
-	free(str);
-	return (keptlen);
+	return (write(1, str, keptlen), free(str), keptlen);
 }
 
 int	treat_hexa(char conversion, unsigned int number, int width)
@@ -80,10 +78,7 @@ int	treat_hexa(char conversion, unsigned int number, int width)
 
 	if (number == 0)
 		return (write(1, "0", 1), 1);
-	if (conversion == 'x')
-		hexa = "0123456789abcdef";
-	else
-		hexa = "0123456789ABCDEF";
+	hexa = get_hexa(conversion);
 	len = get_number_len(conversion, number);
 	keptlen = len;
 	str = malloc(len + 1);
@@ -94,9 +89,7 @@ int	treat_hexa(char conversion, unsigned int number, int width)
 		number /= 16;
 	}
 	print_spaces(width - keptlen);
-	write(1, str, keptlen);
-	free(str);
-	return (keptlen);
+	return (write(1, str, keptlen), free(str), keptlen);
 }
 
 int	treat_pointer(size_t address, int width)
@@ -106,7 +99,7 @@ int	treat_pointer(size_t address, int width)
 	int		len;
 	int		keptlen;
 	size_t	num;
-	
+
 	if (address == 0)
 		return (write(1, "0x0", 3), 3);
 	len = 2;
@@ -125,7 +118,5 @@ int	treat_pointer(size_t address, int width)
 	str[0] = '0';
 	str[1] = 'x';
 	print_spaces(width - keptlen);
-	write(1, str, keptlen);
-	free(str);
-	return (keptlen);
+	return (write(1, str, keptlen), free(str), keptlen);
 }

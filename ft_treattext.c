@@ -6,7 +6,7 @@
 /*   By: mameneze <mwmms@hotmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 20:23:26 by mameneze          #+#    #+#             */
-/*   Updated: 2021/07/16 16:32:45 by mameneze         ###   ########.fr       */
+/*   Updated: 2021/07/16 18:22:01 by mameneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int	ft_put_char(char c)
 	return (1);
 }
 
-int treat_char(char c, int width)
+int	treat_char(char c, int width)
 {
 	print_spaces(width);
 	write(1, &c, 1);
-	return (1);	
+	return (1);
 }
 
 int	treat_string(char *str, int width)
@@ -38,8 +38,20 @@ int	treat_string(char *str, int width)
 int	print_spaces(int width)
 {
 	int	len;
+
 	len = width;
 	while (width-- > 0)
 		write(1, " ", 1);
 	return (len);
+}
+
+char	*get_hexa(char conversion)
+{
+	char	*hexa;
+
+	if (conversion == 'x' || 'p')
+		hexa = "0123456789abcdef";
+	else
+		hexa = "0123456789ABCDEF";
+	return (hexa);
 }

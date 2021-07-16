@@ -6,7 +6,7 @@
 /*   By: mameneze <mwmms@hotmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:24:58 by mameneze          #+#    #+#             */
-/*   Updated: 2021/07/16 16:13:48 by mameneze         ###   ########.fr       */
+/*   Updated: 2021/07/16 18:22:27 by mameneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	isconversion(const char format)
 int	check_conversion(char c, va_list ap, int width)
 {
 	if (c == 'c')
-		return (treat_char(va_arg(ap, int),width));
+		return (treat_char(va_arg(ap, int), width));
 	else if (c == 's')
 		return (treat_string(va_arg(ap, char *), width));
 	else if (c == 'p')

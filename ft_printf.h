@@ -6,7 +6,7 @@
 /*   By: mameneze <mwmms@hotmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 18:20:23 by mameneze          #+#    #+#             */
-/*   Updated: 2021/07/16 16:21:39 by mameneze         ###   ########.fr       */
+/*   Updated: 2021/07/16 18:10:46 by mameneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdarg.h>
 # include "./Libft/libft.h"
 
+char	*get_hexa(char conversion);
 int		print_spaces(int width);
 int		ft_printf(const char *format, ...);
 int		ft_put_char(char c);
