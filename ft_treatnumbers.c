@@ -6,7 +6,7 @@
 /*   By: mameneze <mwmms@hotmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 20:43:45 by mameneze          #+#    #+#             */
-/*   Updated: 2021/07/16 16:37:04 by mameneze         ###   ########.fr       */
+/*   Updated: 2021/07/16 16:39:21 by mameneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int	treat_uint(unsigned int number, int width)
 	}
 	print_spaces(width - keptlen);
 	write(1, str, keptlen);
+	free(str);
 	return (keptlen);
 }
 
@@ -75,7 +76,6 @@ int	treat_hexa(char conversion, unsigned int number, int width)
 	int		len;
 	int		keptlen;
 
-	hexa = malloc(16);
 	if (conversion == 'x')
 		hexa = "0123456789abcdef";
 	else
@@ -92,7 +92,6 @@ int	treat_hexa(char conversion, unsigned int number, int width)
 	print_spaces(width - keptlen);
 	write(1, str, keptlen);
 	free(str);
-	free(hexa);
 	return (keptlen);
 }
 
