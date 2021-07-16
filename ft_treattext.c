@@ -6,7 +6,7 @@
 /*   By: mameneze <mwmms@hotmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 20:23:26 by mameneze          #+#    #+#             */
-/*   Updated: 2021/07/16 18:24:10 by mameneze         ###   ########.fr       */
+/*   Updated: 2021/07/16 18:26:01 by mameneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*get_hexa(char conversion)
 {
 	char	*hexa;
 
-	if (conversion == 'x' || 'p')
+	if (conversion == 'x' || conversion == 'p')
 		hexa = "0123456789abcdef";
 	else
 		hexa = "0123456789ABCDEF";
