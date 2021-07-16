@@ -6,7 +6,7 @@
 /*   By: mameneze <mwmms@hotmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 20:43:45 by mameneze          #+#    #+#             */
-/*   Updated: 2021/07/16 18:15:25 by mameneze         ###   ########.fr       */
+/*   Updated: 2021/07/16 18:34:29 by mameneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	treat_uint(unsigned int number, int width)
 	long	n_value;
 
 	if (number == 0)
-		return (print_spaces(width - 3), write(1, "0", 1), 3);
+		return (print_spaces(width - 1), write(1, "0", 1), 1);
 	len = 0;
 	n_value = number;
 	while (number != 0)
