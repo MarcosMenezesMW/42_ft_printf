@@ -6,7 +6,7 @@
 /*   By: mameneze <mwmms@hotmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 20:43:45 by mameneze          #+#    #+#             */
-/*   Updated: 2021/07/14 23:36:08 by mameneze         ###   ########.fr       */
+/*   Updated: 2021/07/16 16:29:28 by mameneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	treat_integer(int number, int width)
 	print_spaces(width - len);
 	write(1, str, len);
 	free(str);
-	return (len + 1);
+	return (len);
 }
 
 int	treat_uint(unsigned int number, int width)
@@ -65,7 +65,7 @@ int	treat_uint(unsigned int number, int width)
 	}
 	print_spaces(width - keptlen);
 	write(1, str, keptlen);
-	return (keptlen + 1);
+	return (keptlen);
 }
 
 int	treat_hexa(char conversion, unsigned int number, int width)
@@ -91,7 +91,7 @@ int	treat_hexa(char conversion, unsigned int number, int width)
 	print_spaces(width - keptlen);
 	write(1, str, keptlen);
 	free(str);
-	return (keptlen + 1);
+	return (keptlen);
 }
 
 int	treat_pointer(size_t address, int width)
@@ -120,5 +120,5 @@ int	treat_pointer(size_t address, int width)
 	print_spaces(width - keptlen);
 	write(1, str, keptlen);
 	free(str);
-	return (keptlen + 1);
+	return (keptlen);
 }
