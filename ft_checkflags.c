@@ -6,11 +6,12 @@
 /*   By: mameneze <mwmms@hotmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:24:58 by mameneze          #+#    #+#             */
-/*   Updated: 2021/07/16 18:22:27 by mameneze         ###   ########.fr       */
+/*   Updated: 2021/07/16 19:05:31 by mameneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 int	isconversion(const char format)
 {
 	char	*flaglist;
