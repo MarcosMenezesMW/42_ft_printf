@@ -6,7 +6,7 @@
 /*   By: mameneze <mwmms@hotmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:00:52 by mameneze          #+#    #+#             */
-/*   Updated: 2021/07/16 16:32:31 by mameneze         ###   ########.fr       */
+/*   Updated: 2021/07/16 21:54:30 by mameneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ int	treat_conditions(const char *format, int c_len, va_list ap, int *ptd)
 		if (ft_isdigit(format[c_len]))
 		{
 			while (format[c_len] >= '0' && format[c_len] <= '9')
-			{
 				width = (width * 10) + (format[c_len++] - '0');
-			}
 			*ptd += width;
 		}
 		if (isconversion(format[c_len]))
@@ -48,8 +46,7 @@ int	ft_printf(const char *format, ...)
 	ptd = 0;
 	va_start(ap, format);
 	while (format[++i])
-	{
 		i = treat_conditions(format, i, ap, &ptd);
-	}
+	va_end(ap);
 	return (ptd);
 }
